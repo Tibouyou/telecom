@@ -21,7 +21,9 @@ const CoordonatesInput = ({ setCenter }) => {
   };
 
   return (
-    <div className="coordinates-input">
+    <div className="coordinates-input container">
+      <h3>Insérez des coordonnées pour visualiser la localisation</h3>
+      <br />
       <input
         type="number"
         placeholder="Latitude"
@@ -34,7 +36,7 @@ const CoordonatesInput = ({ setCenter }) => {
         value={longitude}
         onChange={handleLongitudeChange}
       />
-      <button className='button-input' onClick={handleUpdateCoordinates}>Mettre à jour</button>
+      <button className='button-input' onClick={handleUpdateCoordinates}>Mettre à jour la carte</button>
     </div>
   );
 };

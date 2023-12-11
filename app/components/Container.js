@@ -3,6 +3,7 @@ import React, {useState, useRef} from 'react';
 import dynamic from 'next/dynamic'
 import CoordinatesInput from './CoordonatesInput.js'
 import AdressInput from './AdressInput.js'
+import RecenterButton from './RecenterButton.js'
 
 const Map = dynamic(() => import("./Map.js"), {
   loading: () => <p>loading...</p>,
@@ -20,10 +21,14 @@ export default function Container() {
 
   return (
     <>
-    <Map center={center} zoom={zoom} innerRef={mapRef}/>
-    <CoordinatesInput setCenter={setCenter} />
-    <AdressInput setCenter={setCenter} />
-    <button className="recenter-button" onClick={recenterMap}>Recentrer</button>
+    <div className='InterfaceContainer'>
+      <Map center={center} zoom={zoom} innerRef={mapRef}/>
+      <div className='DonneesContainer'>
+        <RecenterButton onClick={recenterMap} />
+        <CoordinatesInput setCenter={setCenter} />
+        <AdressInput setCenter={setCenter} />
+      </div>
+    </div>
     </>
   );
 };

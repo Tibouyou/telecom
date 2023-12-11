@@ -32,7 +32,8 @@ const AdressInput = ({ setCenter }) => {
     };
 
     return (
-        <div className="coordinates-input">
+        <div className="coordinates-input container">
+            <h3>Insérez une adresse ou une ville pour visualiser la localisation</h3>
             <input role="combobox"
                 aria-autocomplete="list"
                 aria-expanded="false"
@@ -43,7 +44,8 @@ const AdressInput = ({ setCenter }) => {
                 value={adress}
                 onChange={handleAdresseChange}>
             </input>
-            <button className='button-input' onClick={handleUpdateAdress}>Mettre à jour</button>
+
+            <button className='button-input' onClick={handleUpdateAdress}>Mettre à jour la carte</button>
         </div>
     );
 };

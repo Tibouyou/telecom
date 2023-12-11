@@ -29,19 +29,17 @@ export default function Map( { center, zoom, innerRef } ) {
 
   return (
     <>
-      <div className='InterfaceContainer'>
-        <div className='MapContainer-all'>
-          <div className='MapContainer-titre'>
-            <h1>Carte de couverture réseau française</h1>
-          </div>
-          <div className='row'>
-            <div className='col'>
-              <div className='MapContainer-map'>
-                <MapContainer className='map' center={center} zoom={zoom} ref={innerRef}>
-                  <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
-                  {/* <GeoJSON data={communes} onEachFeature={randomColor} /> */}
-                </MapContainer>
-              </div>
+      <div className='MapContainer-all'>
+        <div className='MapContainer-titre'>
+          <h1>Carte de couverture réseau française</h1>
+        </div>
+        <div className='row'>
+          <div className='col'>
+            <div className='MapContainer-map'>
+              <MapContainer className='map' center={center} zoom={zoom} ref={innerRef}>
+                <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
+                {/* <GeoJSON data={communes} onEachFeature={randomColor} /> */}
+              </MapContainer>
             </div>
           </div>
         </div>
