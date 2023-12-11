@@ -1,0 +1,24 @@
+/* styles/footer.css */
+
+/* Styles pour le footer */
+footer {
+    background-color: var(--background-color-dark); /* Couleur de fond du footer */
+    color: var(--text-color-dark); /* Couleur du texte dans le footer */
+    padding: 20px 0; /* Espacement intérieur du footer */
+    text-align: center; /* Alignement du texte au centre */
+    bottom:0;  /* on le colle en bas */
+    width:100%;
+    height:100px;   /* Hauteur du pied de page */
+  }
+  
+  /* Styles pour les liens dans le footer */
+  footer a {
+    color: var(--text-color-dark); /* Couleur des liens dans le footer */
+    text-decoration: none;
+    font-size: 1.5rem;
+  }
+  
+  footer a:hover {
+    text-decoration: underline; /* Soulignement des liens au survol */
+  }
+  

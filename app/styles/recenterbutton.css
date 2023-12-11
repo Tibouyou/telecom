@@ -1,0 +1,28 @@
+/* recenter-button.css */
+.recenter-button {
+    display: inline-block;
+    background-color: #333; /* Couleur de fond grise */
+    color: #fff; /* Couleur du texte */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px; /* Espacement autour du bouton */
+  }
+  
+  /* Style au survol */
+  .recenter-button:hover {
+    background-color: #999; /* Couleur de fond plus sombre au survol */
+  }
+
+  .recenter-button:active{
+    background-color: #fff; /* Couleur de fond plus sombre au survol */
+    color: #333;
+    border: #333 solid 1px;
+    border-radius: 5px;
+    padding: 10px 20px;
+    box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.5); /* Effet de shadow box vers l'intérieur au clic */
+    transition: color 0.2s ease, box-shadow 0.2s ease; /* Transition douce de la couleur du texte et de l'ombre */
+  }
+  

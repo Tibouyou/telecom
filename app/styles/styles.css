@@ -1,0 +1,254 @@
+/* styles/styles.css */
+
+/* styles.css */
+
+:root {
+  --background-color-light: var(--color1);
+  --text-color-light: var(--color5);
+
+  --background-color-bis: var(--color4);
+  --text-color-bis: var(--color2);
+
+  --background-color-dark: var(--color5);
+  --text-color-dark: #ffffff;
+
+  --color1: #ffffff;
+  --color2: #73c1e2;
+  --color3: #3B556D;
+  --color4: #282c34;  
+  --color5: #20232a;
+
+
+}
+@font-face {
+  font-family: "Poppins";
+  src: url('Font/Poppins-Black.eot');
+  src: url('Font/Poppins-Black.eot') format('embedded-opentype'),
+       url('Font/Poppins-Black.ttf') format('truetype')
+  
+
+}
+
+/* Réinitialisation des styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Styles pour le corps de la page */
+  body {
+    background-color: var(--background-color-light);
+    color: var(--text-color-light);
+    font-family: Poppins,Arial, sans-serif;
+    
+  }
+
+  body.dark-mode {
+    background-color: var(--background-color-dark);
+    color: var(--text-color-dark);
+  }
+  
+  /* Styles pour le conteneur principal */
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--background-color-light); /* Fond blanc */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  }
+
+@keyframes slidein_right {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+.titles{
+  margin-bottom: 50px;
+  margin-top: 20px;
+  text-align: center;
+  color: var(--text-color-light);
+  font-size: 3vw;
+  font-weight: 500;
+}
+
+/* Styles pour le conteneur de présentation */
+.PresentationContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 35vh;
+}
+
+.PresentationTextContainer{
+  width: 100%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  text-align: center;
+  color: var(--text-color-light);
+  font-size: xx-large;
+}
+
+/* Styles pour les boutons*/
+.Button{
+  width: auto;
+  height: 50px;
+  border-radius: 4px;
+  border: none;
+  background-color: var(--background-color-dark);
+  color: var(--text-color-dark);
+  margin: 10px;
+  cursor: pointer;
+  padding: 10px;
+  font-size: larger;
+}
+
+.Button:hover{
+  background-color: var(--background-color-light);
+  color: var(--text-color-light);
+  border: var(--background-color-dark) solid 3px;
+  transition: 0.5s;
+}
+
+/* Styles pour le conteneur des objectifs */
+.ObjectifContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40vh;
+  background-color: var(--background-color-bis);
+  margin-bottom: 30px;
+}
+
+.ObjectifContainer > .titles{
+  color: var(--text-color-bis);
+}
+
+.ObjectifTextContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.ObjectifText{
+  width: 30%;
+  margin: 20px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: var(--text-color-bis) solid 3px;
+  border-radius: 4px;
+}
+
+.ObjectifText > p{
+  padding: 10px;
+  border-left: var(--text-color-bis) solid 3px;
+  text-align: center;
+  color: var(--text-color-bis);
+  font-size: larger;
+}
+
+.ObjectifImg{
+  width: 10%;
+  height: fit-content;
+  padding: 5px;
+  filter : invert(100%);
+}
+
+
+/* Styles pour l'interface de la carte */
+
+.InterfaceContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: stretch;
+  animation-name: slidein_right;
+  animation-duration: 1s;
+}
+
+.DonneesContainer{
+  border: #333 solid 1px;
+  border-radius: 4px;
+  margin: 20px auto;
+  margin-left: 20px;
+  margin-right: 20px;
+  box-shadow: #333 0px 0px 10px;
+  width: 45%;
+  padding: 20px;
+}
+
+/* Styles pour le sélecteur de type de réseau */
+label {
+  display: block;
+  text-decoration: underline;
+  margin-bottom: 10px;
+}
+
+.selection {
+  padding: 10px;
+  color: var(--text-color-light); /* Couleur du texte */
+  font-size: 1rem;
+  border: 1px solid #ccc; /* Bordure grise */
+  border-radius: 4px;
+  background-color: #f9f9f9; /* Fond gris clair pour le sélecteur */
+}
+
+.option {
+  padding: 10px;
+  color: var(--text-color-light); /* Couleur du texte */
+  font-size: 1rem;
+  border: 1px solid #ccc; /* Bordure grise */
+  border-radius: 4px;
+  background-color: #f9f9f9; /* Fond gris clair pour le sélecteur */
+}
+
+/* Styles pour le tableau*/ 
+
+.TableauContainer{
+    border: #333 solid 1px;
+    border-radius: 4px;
+    margin: 20px auto;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 20px;
+    box-shadow: #333 0px 0px 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--background-color-light)
+}
+
+table, th, td {
+  border: 1px solid #ddd; /* Bordure grise */
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+}
+
+tr:hover {
+  background-color: #ccc; /* Fond gris clair au survol */
+}
+
+/* Styles pour l'en-tête de la table */
+th {
+  background-color: var(--background-color-bis); /* Couleur de fond de l'en-tête */
+  color: var(--text-color-dark); /* Couleur du texte de l'en-tête */
+}

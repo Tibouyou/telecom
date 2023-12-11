@@ -1,0 +1,34 @@
+/* styles/header.css */
+
+/* Styles pour le header */
+header {
+    background-color: var(--background-color-bis); /* Couleur de fond de l'en-tête */
+    color: #fff; /* Couleur du texte dans l'en-tête */
+    padding: 20px; /* Espacement intérieur du header */
+    text-align: right; /* Alignement du texte au centre */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Styles pour le titre de la page */
+  .title {
+    font-size: 4rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Styles pour les liens dans le header (par exemple, un bouton de retour à la page d'accueil) */
+  .header-link {
+    color: #fff; /* Couleur du texte des liens */
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .header-link:hover {
+    text-decoration: underline; /* Soulignement des liens au survol */
+  }
+  
+  .logo_img{
+    width: 100px;
+    height: 100px;
+  }

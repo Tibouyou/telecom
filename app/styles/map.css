@@ -1,0 +1,25 @@
+/* styles/map.css */
+
+
+.map {
+    width: auto;
+    height: 60vh;
+    margin: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin: 20px auto;
+    margin-left: 20px;
+    color: #333;
+  }
+
+  .MapContainer-all {
+    border: #333 solid 1px;
+    border-radius: 4px;
+    margin: 20px auto;
+    margin-left: 20px;
+    margin-right: 20px;
+    box-shadow: #333 0px 0px 10px;
+    width: 100%;
+  }
