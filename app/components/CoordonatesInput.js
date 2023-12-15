@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import styles from '../styles/button.css';
+import styles from '../styles/donnees.css';
 
 const CoordonatesInput = ({ setCenter }) => {
   const [latitude, setLatitude] = useState('');

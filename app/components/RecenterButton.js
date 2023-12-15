@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../styles/button.css';
+import styles from '../styles/donnees.css';
 
 const RecenterButton = ({ onClick }) => (
   <div className='container'>
