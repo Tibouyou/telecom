@@ -4,9 +4,10 @@ import dynamic from 'next/dynamic'
 import CoordinatesInput from './CoordonatesInput.js'
 import AdressInput from './AdressInput.js'
 import RecenterButton from './RecenterButton.js'
+import styles from '../styles/container.css';
 
 const Map = dynamic(() => import("./Map.js"), {
-  loading: () => <p>loading...</p>,
+  loading: () => <div class="lds-ring"><div></div><div></div><div></div><div></div></div>,
   ssr: false
 })
 

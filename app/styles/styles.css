@@ -101,18 +101,19 @@
   font-size: xx-large;
 }
 
-/* Styles pour les boutons*/
+/* Styles pour le bouton de scroll*/
 .Button{
   width: auto;
   height: 50px;
   border-radius: 4px;
-  border: none;
+  border: var(--background-color-dark) solid 3px;
   background-color: var(--background-color-dark);
   color: var(--text-color-dark);
   margin: 10px;
   cursor: pointer;
   padding: 10px;
   font-size: larger;
+  
 }
 
 .Button:hover{
