@@ -1,10 +1,10 @@
 import React from 'react';
-import styles from '../styles/recenterbutton.css';
+import styles from '../styles/button.css';
 
 const RecenterButton = ({ onClick }) => (
   <div className='container'>
     <h3>Recentrer la carte</h3>
-    <button className="recenter-button" onClick={onClick}>Recentrer</button>
+    <button className="button" onClick={onClick}>Recentrer</button>
   </div>
 );
 

@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import styles from '../styles/coordonatesinput.css';
+import styles from '../styles/button.css';
 
 const AdressInput = ({ setCenter }) => {
     const [adress, setAdress] = useState('');
@@ -45,7 +45,7 @@ const AdressInput = ({ setCenter }) => {
                 onChange={handleAdresseChange}>
             </input>
 
-            <button className='button-input' onClick={handleUpdateAdress}>Mettre à jour la carte</button>
+            <button className='button' onClick={handleUpdateAdress}>Mettre à jour la carte</button>
         </div>
     );
 };

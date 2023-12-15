@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import styles from '../styles/coordonatesinput.css';
+import styles from '../styles/button.css';
 
 const CoordonatesInput = ({ setCenter }) => {
   const [latitude, setLatitude] = useState('');
@@ -36,7 +36,7 @@ const CoordonatesInput = ({ setCenter }) => {
         value={longitude}
         onChange={handleLongitudeChange}
       />
-      <button className='button-input' onClick={handleUpdateCoordinates}>Mettre à jour la carte</button>
+      <button className='button' onClick={handleUpdateCoordinates}>Mettre à jour la carte</button>
     </div>
   );
 };
