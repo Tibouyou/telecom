@@ -7,7 +7,7 @@ import RecenterButton from './RecenterButton.js'
 import styles from '../styles/container.css';
 
 const Map = dynamic(() => import("./Map.js"), {
-  loading: () => <div class="lds-ring"><div></div><div></div><div></div><div></div></div>,
+  loading: () => <div className="lds-ring"><div></div><div></div><div></div><div></div></div>,
   ssr: false
 })
 

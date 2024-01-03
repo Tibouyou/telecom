@@ -7,6 +7,9 @@ import Presentation from "./components/Presentation.js";
 import Objectifs from "./components/Objectifs.js";
 import Container from "./components/Container.js";
 
+import communesData from './data/communesData.json'
+
+
 export default function HomePage() {
   return (
     <div>

@@ -10,8 +10,34 @@ import { useMapEvents } from 'react-leaflet'
 import { useLeafletContext } from '@react-leaflet/core'
 import L from 'leaflet'
 
-const communesLayer = L.geoJSON(communes, { onEachFeature: randomColor });
+import communesData from '../data/communesData.json'
+
+const communesLayer = L.geoJSON(communes, { onEachFeature: randomColorCom });
 const departementsLayer = L.geoJSON(departements, { onEachFeature: randomColor });
+
+function randomColorCom(feature, layer) {
+
+  var eligibility = communesData['array'][feature.properties.codgeo]['elig_thd1g']/communesData['array'][feature.properties.codgeo]['nbr']
+  var colors = ['#f1eef6','#bdc9e1','#74a9cf','#2b8cbe','#045a8d'];
+  var color = colors[Math.floor(eligibility * (colors.length))];
+  if (eligibility == 1) {
+    color = colors[4];
+  }
+  const popupContent = `
+    <div>
+      <p>${communesData['array'][feature.properties.codgeo]['nom_com']}</p>  
+      <p>Eligibilité THD : ${Math.round(eligibility*100)}%</p>
+      <p>Color : ${color}</p>     
+    </div>
+  `;
+  layer.bindPopup(popupContent);
+  layer.setStyle({
+    color: color,
+    weight: 1,
+    opacity: 1,
+    fillOpacity: 0.7
+  });
+}
 
 function randomColor(feature, layer) {
   const popupContent = `

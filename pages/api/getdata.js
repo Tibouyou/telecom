@@ -11,11 +11,15 @@ export default async function handler(req, res) {
     });
     try {
 
-        const query = `SELECT text FROM test`;
+        const query = `SELECT * FROM communes`;
         const values = []
         const [data] = await dbconnection.execute(query, values);
         dbconnection.end();
-        res.status(200).json({ results: data });
+        let array = {};
+        for (var i = 0; i < data.length; i++) {
+            array[data[i].code_insee] = data[i];
+        }
+        res.status(200).json({ array });
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
