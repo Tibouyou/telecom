@@ -24,7 +24,6 @@ function styleCom(feature) {
   if (eligibility == 1) {
     color = colors[4];
   } else color = colors[Math.floor(eligibility * (colors.length))];
-  console.log(eligibility);
   return {
     weight: 1,
     opacity: 1,
@@ -49,22 +48,30 @@ function styleDep(feature) {
 }
 
 function popupDep(feature, layer) {
-  var eligibility = depData['array'][feature.properties.code_insee]['elig_thd1g'] / depData['array'][feature.properties.code_insee]['nbr']
   const popupContent = `
     <div>
       <p>${feature.properties.nom}</p>
-      <p>Eligibilité THD : ${Math.round(eligibility * 100)}%</p> 
+      <p>Eligibilité 1GB : ${Math.round(depData['array'][feature.properties.code_insee]['elig_thd1g'] / depData['array'][feature.properties.code_insee]['nbr'] * 100)}%</p> 
+      <p>Eligibilité 100MB : ${Math.round(depData['array'][feature.properties.code_insee]['elig_thd100'] / depData['array'][feature.properties.code_insee]['nbr'] * 100)}%</p>
+      <p>Eligibilité 30MB : ${Math.round(depData['array'][feature.properties.code_insee]['elig_thd30'] / depData['array'][feature.properties.code_insee]['nbr'] * 100)}%</p>
+      <p>Eligibilité 8MB : ${Math.round(depData['array'][feature.properties.code_insee]['elig_bhd8'] / depData['array'][feature.properties.code_insee]['nbr'] * 100)}%</p>
+      <p>Eligibilité 3MB : ${Math.round(depData['array'][feature.properties.code_insee]['elig_hd3'] / depData['array'][feature.properties.code_insee]['nbr'] * 100)}%</p>
+      <p>Eligibilité 0.5MB : ${Math.round(depData['array'][feature.properties.code_insee]['elig_hd05'] / depData['array'][feature.properties.code_insee]['nbr'] * 100)}%</p>
     </div>
   `;
   layer.bindPopup(popupContent);
 }
 
 function popupCom(feature, layer) {
-  var eligibility = communesData['array'][feature.properties.codgeo]['elig_thd1g'] / communesData['array'][feature.properties.codgeo]['nbr']
   const popupContent = `
     <div>
       <p>${communesData['array'][feature.properties.codgeo]['nom_com']}</p>  
-      <p>Eligibilité THD : ${Math.round(eligibility * 100)}%</p>    
+      <p>Eligibilité 1GB : ${Math.round(communesData['array'][feature.properties.codgeo]['elig_thd1g'] / communesData['array'][feature.properties.codgeo]['nbr'] * 100)}%</p>    
+      <p>Eligibilité 100MB : ${Math.round(communesData['array'][feature.properties.codgeo]['elig_thd100'] / communesData['array'][feature.properties.codgeo]['nbr'] * 100)}%</p>
+      <p>Eligibilité 30MB : ${Math.round(communesData['array'][feature.properties.codgeo]['elig_thd30'] / communesData['array'][feature.properties.codgeo]['nbr'] * 100)}%</p>
+      <p>Eligibilité 8MB : ${Math.round(communesData['array'][feature.properties.codgeo]['elig_bhd8'] / communesData['array'][feature.properties.codgeo]['nbr'] * 100)}%</p>
+      <p>Eligibilité 3MB : ${Math.round(communesData['array'][feature.properties.codgeo]['elig_hd3'] / communesData['array'][feature.properties.codgeo]['nbr'] * 100)}%</p>
+      <p>Eligibilité 0.5MB : ${Math.round(communesData['array'][feature.properties.codgeo]['elig_hd05'] / communesData['array'][feature.properties.codgeo]['nbr'] * 100)}%</p>
     </div>
   `;
   layer.bindPopup(popupContent);

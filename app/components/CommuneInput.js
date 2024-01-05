@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import styles from '../styles/donnees.css';
 
-const AdressInput = ({ setCenter }) => {
+export default function CommuneInput(setCommune) {
     const [adress, setAdress] = useState('');
 
     const handleAdresseChange = (e) => {
@@ -25,28 +25,27 @@ const AdressInput = ({ setCenter }) => {
                 })
                 .then(data => {
                     // On méler dos nez dent lait variables 
-                    setCenter({ lat: parseFloat(data.features[0].geometry.coordinates[1]), lng: parseFloat(data.features[0].geometry.coordinates[0]) });
+                    console.log(data);
+                    setCommune({ lat: parseFloat(data.features[0].geometry.coordinates[1]), lng: parseFloat(data.features[0].geometry.coordinates[0]) });
                 })
         }
     };
 
     return (
         <div className="coordinates-input container">
-            <h3>Insérez une adresse ou une ville pour visualiser la localisation</h3>
+            <h3>Insérez le nom d'une commune</h3>
             <input role="combobox"
                 aria-autocomplete="list"
                 aria-expanded="false"
                 autoComplete="on"
-                placeholder="Chercher une adresse..."
+                placeholder="Chercher une commune..."
                 aria-label="Recherche"
                 className="jsx-2370006322 search"
                 value={adress}
                 onChange={handleAdresseChange}>
             </input>
 
-            <button className='button' onClick={handleUpdateAdress}>Mettre à jour la carte</button>
+            <button className='button' onClick={handleUpdateAdress}>Rechercher</button>
         </div>
     );
 };
-
-export default AdressInput;

@@ -6,8 +6,7 @@ import Footer from "./components/Footer.js";
 import Presentation from "./components/Presentation.js";
 import Objectifs from "./components/Objectifs.js";
 import Container from "./components/Container.js";
-
-import communesData from './data/communesData.json'
+import Search from "./components/Search.js";
 
 
 export default function HomePage() {
@@ -18,7 +17,7 @@ export default function HomePage() {
       <Objectifs />
       <div className='titles' id="Map_scroll">Découvrez notre interface intuitive</div>
       <Container />
-      
+      <Search />
       <Footer />
     </div>
   );
