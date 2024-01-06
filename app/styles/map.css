@@ -21,3 +21,26 @@
     box-shadow: #333 0px 0px 10px;
     width: 100%;
   }
+
+  /* Styles pour le sélecteur de type de réseau */
+
+.container-select{
+  margin: 20px;
+}
+
+.selection {
+  width: 10%;
+  padding: 10px;
+  margin: 20px 20px 20px 0px;
+  color: var(--text-color-light); 
+  font-size: 1rem;
+  border: 1px solid #ccc; 
+  border-radius: 4px;
+  background-color: #f9f9f9; 
+  position: relative;
+}
+
+option {
+  color: var(--text-color-light); 
+  background-color: #f9f9f9;
+}

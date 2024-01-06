@@ -193,27 +193,3 @@
   padding: 20px;
 }
 
-/* Styles pour le sélecteur de type de réseau */
-label {
-  display: block;
-  text-decoration: underline;
-  margin-bottom: 10px;
-}
-
-.selection {
-  padding: 10px;
-  color: var(--text-color-light); /* Couleur du texte */
-  font-size: 1rem;
-  border: 1px solid #ccc; /* Bordure grise */
-  border-radius: 4px;
-  background-color: #f9f9f9; /* Fond gris clair pour le sélecteur */
-}
-
-.option {
-  padding: 10px;
-  color: var(--text-color-light); /* Couleur du texte */
-  font-size: 1rem;
-  border: 1px solid #ccc; /* Bordure grise */
-  border-radius: 4px;
-  background-color: #f9f9f9; /* Fond gris clair pour le sélecteur */
-}
