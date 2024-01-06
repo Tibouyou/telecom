@@ -1,0 +1,38 @@
+/* styles/tableau.css */
+ 
+/* Styles pour le tableau*/ 
+
+.TableauContainer{
+  border: #333 solid 1px;
+  border-radius: 4px;
+  margin: 20px auto;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 20px;
+  box-shadow: #333 0px 0px 10px;
+}
+
+table {
+width: 100%;
+border-collapse: collapse;
+background-color: var(--background-color-light)
+}
+
+table, th, td {
+border: 1px solid #ddd; /* Bordure grise */
+}
+
+th, td {
+padding: 12px;
+text-align: left;
+}
+
+tr:hover {
+background-color: #ccc; /* Fond gris clair au survol */
+}
+
+/* Styles pour l'en-tête de la table */
+th {
+background-color: var(--background-color-bis); /* Couleur de fond de l'en-tête */
+color: var(--text-color-dark); /* Couleur du texte de l'en-tête */
+}

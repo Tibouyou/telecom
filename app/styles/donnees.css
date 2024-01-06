@@ -9,7 +9,7 @@
     padding: 10px 20px;
     cursor: pointer;
     font-size: 16px;
-    margin: 10px; /* Espacement autour du bouton */
+    margin: 10px 10px 10px 0px;
   }
   
 /* Style au survol */
@@ -57,8 +57,7 @@ input[type="number"]:focus {
 input[role="combobox"] {
   width: 90%;
   padding: 10px;
-  margin: 5px;
-  margin-left: 10px;
+  margin: 5px 5px 5px 0px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;

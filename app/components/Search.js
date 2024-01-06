@@ -1,5 +1,6 @@
 "use client"
 import { useEffect, useState } from 'react';
+import styles from '../styles/tableau.css';
 
 export default function Search() {
     const [commune, setCommune] = useState('');
@@ -45,51 +46,57 @@ export default function Search() {
 
     return (
         <>
-            <div className="container">
-                <h3>Insérez le nom d'une commune</h3>
-                <input role="combobox"
-                    aria-autocomplete="list"
-                    aria-expanded="false"
-                    autoComplete="on"
-                    placeholder="Chercher une commune..."
-                    aria-label="Recherche"
-                    className="jsx-2370006322 search"
-                    value={commune}
-                    onChange={handleAdresseChange}>
-                </input>
+            <div className="TableauContainer">
+                <h1 style={{marginLeft: '0px'}}>Tableau de couverture réseau française</h1>
+            
+                <div>
+                    <h2>Insérez le nom d'une commune pour accéder à ses informations</h2>
+                    <input role="combobox"
+                        aria-autocomplete="list"
+                        aria-expanded="false"
+                        autoComplete="on"
+                        placeholder="Chercher une commune..."
+                        aria-label="Recherche"
+                        className="jsx-2370006322 search"
+                        value={commune}
+                        onChange={handleAdresseChange}>
+                    </input>
 
-                <button className='button' onClick={handleUpdateAdress}>Rechercher</button>
+                    <button className='button' onClick={handleUpdateAdress}>Rechercher</button>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Département</th>
+                            <th>Nombre</th>
+                            <th>1GB</th>
+                            <th>100MB</th>
+                            <th>30MB</th>
+                            <th>8MB</th>
+                            <th>3MB</th>
+                            <th>0.5MB</th>
+                            <th>Inéligible</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{dataResponse.nom_com}</td>
+                            <td>{dataResponse.code_dep}</td>
+                            <td>{dataResponse.nbr}</td>
+                            <td>{dataResponse.elig_thd1g} {dataResponse == '' ? '' : '('+Math.round(dataResponse.elig_thd1g / dataResponse.nbr * 100)+' %)'}</td>
+                            <td>{dataResponse.elig_thd100} {dataResponse == '' ? '' : '('+Math.round(dataResponse.elig_thd100 / dataResponse.nbr * 100)+' %)'}</td>
+                            <td>{dataResponse.elig_thd30} {dataResponse == '' ? '' : '('+Math.round(dataResponse.elig_thd30 / dataResponse.nbr * 100)+' %)'}</td>
+                            <td>{dataResponse.elig_bhd8} {dataResponse == '' ? '' : '('+Math.round(dataResponse.elig_bhd8 / dataResponse.nbr * 100)+' %)'}</td>
+                            <td>{dataResponse.elig_hd3} {dataResponse == '' ? '' : '('+Math.round(dataResponse.elig_hd3 / dataResponse.nbr * 100)+' %)'}</td>
+                            <td>{dataResponse.elig_hd05} {dataResponse == '' ? '' : '('+Math.round(dataResponse.elig_hd05 / dataResponse.nbr * 100)+' %)'}</td>
+                            <td>{dataResponse.inel_hd} {dataResponse == '' ? '' : '('+Math.round(dataResponse.inel_hd / dataResponse.nbr * 100)+' %)'}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
             </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nom</th>
-                        <th>Département</th>
-                        <th>Nombre</th>
-                        <th>1GB</th>
-                        <th>100MB</th>
-                        <th>30MB</th>
-                        <th>8MB</th>
-                        <th>3MB</th>
-                        <th>0.5MB</th>
-                        <th>Inéligible</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>{dataResponse.nom_com}</td>
-                        <td>{dataResponse.code_dep}</td>
-                        <td>{dataResponse.nbr}</td>
-                        <td>{dataResponse.elig_thd1g} {dataResponse == '' ? '' : '('+Math.round(dataResponse.elig_thd1g / dataResponse.nbr * 100)+' %)'}</td>
-                        <td>{dataResponse.elig_thd100} {dataResponse == '' ? '' : '('+Math.round(dataResponse.elig_thd100 / dataResponse.nbr * 100)+' %)'}</td>
-                        <td>{dataResponse.elig_thd30} {dataResponse == '' ? '' : '('+Math.round(dataResponse.elig_thd30 / dataResponse.nbr * 100)+' %)'}</td>
-                        <td>{dataResponse.elig_bhd8} {dataResponse == '' ? '' : '('+Math.round(dataResponse.elig_bhd8 / dataResponse.nbr * 100)+' %)'}</td>
-                        <td>{dataResponse.elig_hd3} {dataResponse == '' ? '' : '('+Math.round(dataResponse.elig_hd3 / dataResponse.nbr * 100)+' %)'}</td>
-                        <td>{dataResponse.elig_hd05} {dataResponse == '' ? '' : '('+Math.round(dataResponse.elig_hd05 / dataResponse.nbr * 100)+' %)'}</td>
-                        <td>{dataResponse.inel_hd} {dataResponse == '' ? '' : '('+Math.round(dataResponse.inel_hd / dataResponse.nbr * 100)+' %)'}</td>
-                    </tr>
-                </tbody>
-            </table>
         </>
     );
 };
