@@ -117,6 +117,7 @@ export default function Map({ center, zoom, innerRef }) {
         <div className='MapContainer-titre'>
           <h1>Carte de couverture réseau française</h1>
         </div>
+
         <select name="select" onChange={e => changeFilter(e.target.value)}>
           <option value="elig_thd1g">1G/s</option>
           <option value="elig_thd100">100M/s</option>
@@ -125,6 +126,7 @@ export default function Map({ center, zoom, innerRef }) {
           <option value="elig_hd3">3M/s</option>
           <option value="elig_hd05">0.5M/s</option>
         </select>
+        
         <div className='row'>
           <div className='col'>
             <div className='MapContainer-map'>

@@ -25,8 +25,9 @@ export default function Container() {
     <div className='InterfaceContainer'>
       <Map center={center} zoom={zoom} innerRef={mapRef}/>
       <div className='DonneesContainer'>
+        <h2 style={{marginBottom: '2vh'}}>Contrôles de la carte</h2>
         <RecenterButton onClick={recenterMap} />
-        <CoordinatesInput setCenter={setCenter} />
+        <br />
         <AdressInput setCenter={setCenter} />
       </div>
     </div>
