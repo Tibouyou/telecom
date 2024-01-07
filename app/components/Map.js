@@ -120,28 +120,27 @@ export default function Map({ center, zoom, innerRef }) {
           <h1>Carte de couverture réseau française</h1>
         </div>
 
-        <div className='row'>
-          <div className='col'>
-            <div className='MapContainer-map'>
-              <MapContainer className='map' center={center} zoom={zoom} ref={innerRef}>
-                <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
-                <HandleZoom />
-              </MapContainer>
-            </div>
+        <div className='MapContainer-content'>
+         
+          <div className='MapContainer-map'>
+            <MapContainer className='map' center={center} zoom={zoom} ref={innerRef}>
+              <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
+              <HandleZoom />
+            </MapContainer>
           </div>
-        </div>
 
-        <div className='container container-select'>
-          <h2>Choisissez un filtre pour la carte</h2>
+          <div className='container-select'>
+            <h4>Affichez le réseau souhaité</h4>
+            <select name="select" onChange={e => changeFilter(e.target.value)} className='selection'>
+              <option value="elig_thd1g">1G/s</option>
+              <option value="elig_thd100">100M/s</option>
+              <option value="elig_thd30">30M/s</option>
+              <option value="elig_bhd8">8M/s</option>
+              <option value="elig_hd3">3M/s</option>
+              <option value="elig_hd05">0.5M/s</option>
+            </select>
+          </div>
 
-          <select name="select" onChange={e => changeFilter(e.target.value)} className='selection'>
-            <option value="elig_thd1g">1G/s</option>
-            <option value="elig_thd100">100M/s</option>
-            <option value="elig_thd30">30M/s</option>
-            <option value="elig_bhd8">8M/s</option>
-            <option value="elig_hd3">3M/s</option>
-            <option value="elig_hd05">0.5M/s</option>
-          </select>
         </div>
         
       </div>
