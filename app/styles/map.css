@@ -4,7 +4,7 @@
 .map {
   width: auto;
   height: 70vh;
-  margin: 20px;
+  margin: 2.5vh;
 }
 
 h1 {
@@ -33,6 +33,13 @@ h1 {
   position: absolute;
 }
 
+.MapContainer-titre{
+  margin: 2.5vh 2.5vh 0 2.5vh;
+}
+
+.MapContainer-titre > h1{
+  margin: 0;
+}
 /* Styles pour le sélecteur de type de réseau */
 
 .container-select{
