@@ -42,7 +42,7 @@ Une fois que vous avez installé ces logiciels, vous pouvez passer à la section
     npm install
     ```
 
-3. **Configurez la base de données :** Ouvrez le fichier db.js dans le répertoire telecom/lib et mettez à jour les informations de connexion à la base de données local que vous utilisez, lancez votre serveur de base de données. Vous pouvez utiliser des logiciels comme XAMPP ou Laragon pour créer une base de données locale. Importez ensuite le fichier *telecom\app\data\communes.sql* dans votre base de données locale.
+3. **Configurez la base de données :** Ouvrez le fichier config.json et mettez à jour les informations de connexion à la base de données local que vous utilisez, lancez votre serveur de base de données. Vous pouvez utiliser des logiciels comme XAMPP ou Laragon pour créer une base de données locale. Importez ensuite le fichier *telecom\app\data\communes.sql* dans votre base de données locale.
 
 4. **Démarrez le serveur :** Démarrer le serveur de développement avec npm :
     
