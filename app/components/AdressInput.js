@@ -20,11 +20,10 @@ const AdressInput = ({ setCenter }) => {
                     if (!response.ok) {
                         throw new Error('Erreur de réseau');
                     }
-                    // Utilise la méthode .json() quand elle veut bien, pour obtenir les données JSON que je peut ENFIN traiter !!!
                     return response.json();
                 })
                 .then(data => {
-                    // On méler dos nez dent lait variables 
+                    // On change le centre de la carte
                     setCenter({ lat: parseFloat(data.features[0].geometry.coordinates[1]), lng: parseFloat(data.features[0].geometry.coordinates[0]) });
                 })
         }

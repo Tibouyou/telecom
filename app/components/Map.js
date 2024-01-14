@@ -1,7 +1,7 @@
 // components/Map.js
 "use client"
-import React, { useRef, useState } from 'react'
-import { MapContainer, TileLayer, GeoJSON, LayersControl } from 'react-leaflet'
+import React from 'react'
+import { MapContainer, TileLayer } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import styles from '../styles/map.css'
 import departements from '../data/departements.json'
@@ -77,13 +77,14 @@ function popupCom(feature, layer) {
   layer.bindPopup(popupContent);
 }
 
-function HandleZoom() {
+function HandleZoom({setzoom}) {
   const context = useLeafletContext();
   const container = context.layerContainer || context.map;
 
   const mapEvents = useMapEvents({
     zoomend: () => {
       const zoomLevel = mapEvents.getZoom();
+      setzoom(zoomLevel);
       if (zoomLevel >= 9) {
         if (container.hasLayer(communesLayer)) {
           return null;
@@ -105,7 +106,8 @@ function HandleZoom() {
   return null;
 }
 
-export default function Map({ center, zoom, innerRef }) {
+export default function Map({ center, zoom, setzoom, innerRef }) {
+  
   function changeFilter(value) {
     currentFilter = value;
     communesLayer.setStyle(styleCom);
@@ -125,7 +127,7 @@ export default function Map({ center, zoom, innerRef }) {
           <div className='MapContainer-map'>
             <MapContainer className='map' center={center} zoom={zoom} ref={innerRef}>
               <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
-              <HandleZoom />
+              <HandleZoom setzoom={setzoom}/>
             </MapContainer>
           </div>
 

@@ -1,7 +1,6 @@
 "use client";
 import React, {useState, useRef} from 'react';
 import dynamic from 'next/dynamic'
-import CoordinatesInput from './CoordonatesInput.js'
 import AdressInput from './AdressInput.js'
 import RecenterButton from './RecenterButton.js'
 import styles from '../styles/container.css';
@@ -23,7 +22,7 @@ export default function Container() {
   return (
     <>
     <div className='InterfaceContainer'>
-      <Map center={center} zoom={zoom} innerRef={mapRef}/>
+      <Map center={center} zoom={zoom} setzoom={setZoom} innerRef={mapRef}/>
       <div className='DonneesContainer'>
         <h2 style={{marginBottom: '2vh'}}>Contrôles de la carte</h2>
         <RecenterButton onClick={recenterMap} />

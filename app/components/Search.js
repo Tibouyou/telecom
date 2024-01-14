@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import styles from '../styles/tableau.css';
 
 export default function Search() {
@@ -13,8 +13,6 @@ export default function Search() {
     async function handleUpdateAdress() {
         if (commune) {
             const url = "https://api-adresse.data.gouv.fr/search/?q=";
-
-
             fetch(url + commune)
                 .then(response => {
                     // Vérifie si la requête s'est déroulée avec succès (statut HTTP 200)
@@ -25,7 +23,6 @@ export default function Search() {
                     return response.json();
                 })
                 .then(async data => {
-                    // On méler dos nez dent lait variables 
                     const apiUrlEndpoint = `/api/getdata`;
                     const postData = {
                         method: 'POST',
@@ -39,7 +36,6 @@ export default function Search() {
                     const response = await fetch(apiUrlEndpoint, postData);
                     const res = await response.json();
                     setDataResponse(res.results);
-                    console.log(res.results);
                 })
         }
     };
