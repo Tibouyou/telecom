@@ -1,0 +1,7 @@
+{
+    "host": "localhost",
+    "database": "telecom",
+    "user": "root",
+    "password": "",
+    "socketPath": ""
+}
